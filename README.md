@@ -2,6 +2,12 @@
 
 A modern, responsive weather application built with Next.js, TypeScript, and Tailwind CSS. Get real-time weather information for any city worldwide.
 
+## Live Demo
+
+**Try it now:** [https://weather-app-sigma-cyan-71.vercel.app/](https://weather-app-sigma-cyan-71.vercel.app/)
+
+The app is deployed on Vercel and ready to use! Just enter any city name to see current weather conditions.
+
 ## Features
 
 - **Real-time Weather Data**: Get current weather conditions for any city
