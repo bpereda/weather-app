@@ -4,12 +4,12 @@ A modern, responsive weather application built with Next.js, TypeScript, and Tai
 
 ## Features
 
-- 🌤️ **Real-time Weather Data**: Get current weather conditions for any city
-- 🎨 **Modern UI**: Beautiful, responsive design with Tailwind CSS
-- ⚡ **Fast Performance**: Built with Next.js for optimal performance
-- 🔒 **Type Safety**: Full TypeScript support
-- 📱 **Mobile Friendly**: Responsive design that works on all devices
-- 🌡️ **Detailed Information**: Temperature, humidity, wind speed, pressure, and more
+- **Real-time Weather Data**: Get current weather conditions for any city
+- **Modern UI**: Beautiful, responsive design with Tailwind CSS
+- **Fast Performance**: Built with Next.js for optimal performance
+- **Type Safety**: Full TypeScript support
+- **Mobile Friendly**: Responsive design that works on all devices
+- **Detailed Information**: Temperature, humidity, wind speed, pressure, and more
 
 ## Technologies Used
 
@@ -35,12 +35,19 @@ A modern, responsive weather application built with Next.js, TypeScript, and Tai
    ```
 
 3. **Set up environment variables**:
-   - Copy `.env.local` file
+   - The project includes a `.env.local` file for environment variables
    - Get a free API key from [OpenWeatherMap](https://openweathermap.org/api)
-   - Replace `your_api_key_here` with your actual API key:
+   - Update the `.env.local` file with your actual API key:
    ```bash
+   # .env.local
    OPENWEATHER_API_KEY=your_actual_api_key_here
    ```
+   
+   **Important Notes:**
+   - Never commit your actual API key to version control
+   - The `.env.local` file is already in `.gitignore`
+   - New API keys may take 10-15 minutes to activate
+   - You can test your API key with: `curl "https://api.openweathermap.org/data/2.5/weather?q=London&appid=YOUR_API_KEY&units=metric"`
 
 4. **Run the development server**:
    ```bash
@@ -87,6 +94,43 @@ weather-app/
 ├── tsconfig.json                 # TypeScript configuration
 └── package.json                  # Dependencies and scripts
 ```
+
+## Environment Variables
+
+This project uses environment variables to securely store API keys and configuration.
+
+### Required Environment Variables
+
+Create a `.env.local` file in the root directory with:
+
+```bash
+# OpenWeatherMap API Configuration
+OPENWEATHER_API_KEY=your_openweathermap_api_key_here
+```
+
+### Getting Your API Key
+
+1. **Sign up** at [OpenWeatherMap](https://openweathermap.org/api)
+2. **Verify your email** and log in to your account
+3. **Go to API Keys** section in your dashboard
+4. **Copy your API key** (32-character string)
+5. **Paste it** into your `.env.local` file
+
+### Security Notes
+
+- The `.env.local` file is already added to `.gitignore`
+- Environment variables are only loaded on the server side
+- **Never commit API keys to version control**
+- **Never share your API keys publicly**
+
+### Testing Your API Key
+
+You can test if your API key works using curl:
+```bash
+curl "https://api.openweathermap.org/data/2.5/weather?q=London&appid=YOUR_API_KEY&units=metric"
+```
+
+If you get weather data back, your key is working!
 
 ## API Configuration
 
